@@ -1,0 +1,21 @@
+{
+  "name": "hm3-mini-compose",
+  "version": "1.0.0",
+  "description": "Custom Docker Compose implementation in TypeScript",
+  "main": "dist/MiniCompose.js",
+  "bin": {
+    "mini-compose": "./dist/MiniCompose.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/MiniCompose.js",
+    "dev": "ts-node src/MiniCompose.ts",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
+  }
+}

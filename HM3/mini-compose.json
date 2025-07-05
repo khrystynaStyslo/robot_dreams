@@ -1,0 +1,16 @@
+{
+  "network": "internal",
+  "services": {
+    "redis": {
+      "build": "./redis-service",
+      "ports": { "4000": "4000" },
+      "env": { "NODE_ENV": "production" }
+    },
+    "kv": {
+      "build": "./kv-server",
+      "depends_on": ["redis"],
+      "ports": { "8080": "3000" },
+      "env": { "REDIS_URL": "http://redis:4000" }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY redis-service/package*.json redis-service/tsconfig.json ./
+
+RUN npm install
+
+COPY redis-service/src ./src
+
+RUN npm run build
+
+RUN npm prune --omit=dev
+
+ENV PORT=4000
+
+EXPOSE 4000
+
+CMD ["npm", "start"]
